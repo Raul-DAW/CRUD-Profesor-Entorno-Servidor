@@ -32,14 +32,14 @@ class ProfesorController extends Controller
         return view('profesor.show', ['profesor' => $profesor]);
     }
 
-    public function store(Request $request)
-    {
-        $profesor = new Profesor($request->all());
+   public function store(Request $request)
+{
+    $profesor = new Profesor($request->all());
 
-        $profesor->save();
+    $profesor->save();
 
-        return redirect()->route('profesor.index');
-    }
+    return redirect()->route('profesor.index');
+}
 
     public function update(Request $request, Profesor $profesor): RedirectResponse {
         $profesor->update($request->all());

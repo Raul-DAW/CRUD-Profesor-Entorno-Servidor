@@ -9,7 +9,9 @@
             <h2 class="mb-4">Crear Profesor</h2>
 
             <form action="{{ route('profesor.store') }}" method="post">
-               @csrf /*Medida de seguridad que se usa con todas las rutas que no sean */
+                @csrf
+                /*Medida de seguridad que se usa con todas las rutas que no sean */
+
                 {{-- Nombre --}}
                 <div class="mb-3">
                     <label for="nombre" class="form-label">
@@ -42,10 +44,10 @@
                         required>
                 </div>
 
-                 {{-- Especialidad --}}
+                {{-- Especialidad --}}
                 <div class="mb-3">
-                    <label for="apellido" class="form-label">
-                        Apellidos:
+                    <label for="especialidad" class="form-label">
+                        Especialidad:
                     </label>
 
                     <input
@@ -66,15 +68,15 @@
 
                     <input
                         type="date"
-                        id="fnac"
-                        name="fnac"
+                        id="fchalt"
+                        name="fchalt"
                         class="form-control">
                 </div>
 
                 {{-- Salario --}}
                 <div class="mb-3">
-                    <label for="nacceso" class="form-label">
-                        Nota de acceso:
+                    <label for="salario" class="form-label">
+                        Salario:
                     </label>
 
                     <input
@@ -83,14 +85,13 @@
                         name="salario"
                         class="form-control"
                         min="0"
-                        max="10"
                         step="0.01"
                         placeholder="Introduce el salario">
                 </div>
 
                 {{-- Botón --}}
                 <button type="submit" class="btn btn-primary">
-                    Crear alumno
+                    Crear Profesor
                 </button>
 
             </form>

@@ -20,7 +20,7 @@ return new class extends Migration
              //especialidad
              $table ->string('especialidad', 100);
             //fecha de alta
-             $table ->date('fchalt') ->nullable;
+             $table ->date('fchalt') ->nullable();
             //salario
             $table->decimal('salario', 8, 2)->nullable();
             $table->timestamps();

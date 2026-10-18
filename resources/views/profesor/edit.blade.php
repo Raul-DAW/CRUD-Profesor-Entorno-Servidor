@@ -6,9 +6,9 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
 
-            <h2 class="mb-4">Editar Alumno</h2>
+            <h2 class="mb-4">Editar Profesor</h2>
 
-            <form action="{{ route('alumno.update', $alumno) }}" method="post">
+            <form action="{{ route('profesor.update', $profesor) }}" method="post">
                 @method('put')
                 @csrf /*Medida de seguridad que se usa con todas las rutas que no sean */
 

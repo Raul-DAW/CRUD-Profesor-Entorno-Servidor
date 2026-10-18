@@ -91,22 +91,6 @@
                             </a>
                         </li>
 
-                            <!-- Crear Alumno--->
-                         <li class="nav-item mx-0 mx-lg-1">
-                            <a class="nav-link py-3 px-0 px-lg-3 rounded"
-                               href="{{ route('alumno.create') }}">
-                                CrearAlumno
-                            </a>
-                        </li>
-
-
-                        <!-- Crear Profesor--->
-                         <li class="nav-item mx-0 mx-lg-1">
-                            <a class="nav-link py-3 px-0 px-lg-3 rounded"
-                               href="{{ route('profesor.create') }}">
-                                CrearProfesor
-                            </a>
-                        </li>
 
                             <!-- Profesor Base de datos--->
                          <li class="nav-item mx-0 mx-lg-1">
