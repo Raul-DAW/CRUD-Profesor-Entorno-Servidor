@@ -88,7 +88,7 @@
                         name="salario"
                         class="form-control"
                         min="0"
-                        max="10"
+                        max="99999999.99"
                         step="0.01"
                         placeholder="Introduce el salario del profesor"
                         value="{{ $profesor->salario }}">

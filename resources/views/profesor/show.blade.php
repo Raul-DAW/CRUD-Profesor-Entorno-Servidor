@@ -12,7 +12,7 @@
         <div class="col-12 col-md-5">
             <div class="card text-center p-4 h-100">
 
-                <img src="{{ asset('assets/img/Chica.jpg') }}"
+                <img src="{{ asset('assets/img/profesor.jpg') }}"
                      class="card-img-top mb-3"
                      alt="Profesor">
 
@@ -45,7 +45,7 @@
                 
 
                 <div class="mt-auto pt-3">
-                    <a href="{{ route('alumno.index') }}" class="btn btn-secondary">
+                    <a href="{{ route('profesor.index') }}" class="btn btn-secondary">
                         Back
                     </a>
                 </div>
