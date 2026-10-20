@@ -92,7 +92,7 @@
                         </li>
 
 
-                            <!-- Profesor Base de datos--->
+                            <!-- Profesor Base de datos -->
                          <li class="nav-item mx-0 mx-lg-1">
                             <a class="nav-link py-3 px-0 px-lg-3 rounded"
                                href="{{ route('profesor.index') }}">
@@ -105,11 +105,25 @@
             </div>
         </nav>
 
-        <!-- Masthead-->
-        <header class="masthead bg-primary text-white text-center">
+      <!-- Masthead-->
+<header class="masthead bg-primary text-white text-center">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            @error('error')
+                <div class="alert alert-danger" role="alert">
+                    {{ $message }}
+                </div>
+            @enderror
+
             @yield('content')
             <!-- directiva de blade (@WORD) que crea una referencia que cuando herede puedo rellenar -->
-        </header>
+
+        </div>
+    </div>
+
+</header>
 
         @yield('after-content')
 

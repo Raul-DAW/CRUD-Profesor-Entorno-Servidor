@@ -28,26 +28,36 @@
                         <td>{{ $alumno->genero }}</td>
                         <td>{{ $alumno->nacceso }}</td>
 
-                        <td>
-                            <a href="{{ route('alumno.show', $alumno) }}" class="btn btn-secondary">View</a>
+                      
+<td class="text-nowrap">
+    <div class="d-flex align-items-center justify-content-center gap-2">
 
-                            <a href="{{ route('alumno.edit', $alumno) }}" class="btn btn-secondary">Edit</a>
+        <a href="{{ route('alumno.show', $alumno) }}"
+           class="btn btn-secondary btn-sm">
+            View
+        </a>
 
-                            <!-- <a href="{{ route('index') }}" class="btn btn-secondary">Delete</a> -->
+        <a href="{{ route('alumno.edit', $alumno) }}"
+           class="btn btn-secondary btn-sm">
+            Edit
+        </a>
 
-                            <form
-                                data-message="{{ $alumno->apellido . ', ' . $alumno->nombre }}"
-                                class="confirm-dialog"
-                                action="{{ route('alumno.destroy', $alumno) }}"
-                                method="post"
-                                style="display: inline">
+        <form
+            data-message="{{ $alumno->apellido . ', ' . $alumno->nombre }}"
+            class="confirm-dialog m-0"
+            action="{{ route('alumno.destroy', $alumno) }}"
+            method="POST"
+        >
+            @csrf
+            @method('DELETE')
 
-                                @csrf
-                                @method('delete')
+            <button type="submit" class="btn btn-secondary btn-sm">
+                Delete
+            </button>
+        </form>
 
-                                <input type="submit" value="Delete" class="btn btn-secondary">
-                            </form>
-                        </td>
+    </div>
+</td>
                     </tr>
 
                     @endforeach

@@ -40,18 +40,17 @@ ProfesorDB
                                 Edit
                             </a>
 
-                            <form
-                                action="{{ route('profesor.destroy', $profesor) }}"
+                            <form 
+                                action="{{ route('profesor.destroy', $profesor) }}" 
                                 method="post"
+                                class="confirm-dialog"
+                                data-message="{{ $profesor->nombre }}"
                                 style="display:inline">
 
                                 @csrf
                                 @method('delete')
 
-                                <input
-                                    type="submit"
-                                    value="Delete"
-                                    class="btn btn-secondary">
+                                <input type="submit" value="Delete" class="btn btn-secondary">
                             </form>
                         </td>
                     </tr>
@@ -64,52 +63,23 @@ ProfesorDB
     </div>
 
 </div>
-@endsection
-
-
-
-
-
-
-
-
-
-{{--
-@extends('template.base')
-
-@section('title')
-GitHub Project
-@endsection
-
-@section('content')
-
-<div class="container d-flex align-items-center flex-column">
-
-    <img class="masthead-avatar mb-5"
-         src="{{ asset('assets/img/avataaars.svg') }}"
-         alt="..." />
-
-    <h1 class="masthead-heading text-uppercase mb-0">
-        Start Bootstrap
-    </h1>
-
-    <div class="divider-custom divider-light">
-
-        <div class="divider-custom-line"></div>
-
-        <div class="divider-custom-icon">
-            <i class="fas fa-star"></i>
-        </div>
-
-        <div class="divider-custom-line"></div>
-
-    </div>
-
-    <p class="masthead-subheading font-weight-light mb-0">
-        Graphic Artist - Web Designer - Illustrator
-    </p>
-
-</div>
 
 @endsection
---}}
+
+@section('script')
+
+<script>
+document.querySelectorAll('form.confirm-dialog').forEach(
+    form => {
+        form.addEventListener('submit', e => {
+            const message = '¿Seguro que quieres borrar al profesor ' + form.dataset.message + '?';
+
+            if (!confirm(message)) {
+                e.preventDefault();
+            }
+        });
+    }
+);
+</script>
+
+@endsection

@@ -8,9 +8,9 @@
 
             <h2 class="mb-4">Crear Profesor</h2>
 
-            <form action="{{ route('profesor.store') }}" method="post">
+            <form action="{{ route('profesor.store') }}" method="post" novalidate>  {{-- novalidate --}}
                 @csrf
-                /*Medida de seguridad que se usa con todas las rutas que no sean */
+                {{-- Medida de seguridad que se usa con todas las rutas que no sean --}}
 
                 {{-- Nombre --}}
                 <div class="mb-3">
@@ -28,6 +28,10 @@
                         required>
                 </div>
 
+                @error('nombre')
+            <div class="alert alert-danger" role="alert"> {{ $message }}</div>
+             @enderror
+
                 {{-- Apellidos --}}
                 <div class="mb-3">
                     <label for="apellido" class="form-label">
@@ -43,6 +47,9 @@
                         placeholder="Introduce los apellidos del profesor"
                         required>
                 </div>
+                @error('apellido')
+            <div class="alert alert-danger" role="alert"> {{ $message }}</div>
+             @enderror
 
                 {{-- Especialidad --}}
                 <div class="mb-3">
@@ -59,6 +66,9 @@
                         placeholder="Introduce la especialidad del profesor"
                         required>
                 </div>
+                @error('especialidad')
+            <div class="alert alert-danger" role="alert"> {{ $message }}</div>
+             @enderror
 
                 {{-- Fecha de alta --}}
                 <div class="mb-3">
@@ -72,6 +82,9 @@
                         name="fchalt"
                         class="form-control">
                 </div>
+                 @error('fchalt')
+            <div class="alert alert-danger" role="alert"> {{ $message }}</div>
+             @enderror
 
                 {{-- Salario --}}
                 <div class="mb-3">
@@ -88,6 +101,9 @@
                         step="0.01"
                         placeholder="Introduce el salario">
                 </div>
+                 @error('salario')
+            <div class="alert alert-danger" role="alert"> {{ $message }}</div>
+             @enderror
 
                 {{-- Botón --}}
                 <button type="submit" class="btn btn-primary">

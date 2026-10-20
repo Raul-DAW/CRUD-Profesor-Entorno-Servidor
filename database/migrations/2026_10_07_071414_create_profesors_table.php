@@ -24,6 +24,7 @@ return new class extends Migration
             //salario
             $table->decimal('salario', 8, 2)->nullable();
             $table->timestamps();
+            $table->unique(['nombre', 'apellido']);
         });
     }
 
